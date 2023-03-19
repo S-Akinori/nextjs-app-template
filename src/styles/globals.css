@@ -1,14 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+@import './animation.css';
+@import './font.css';
+@import './utilities.css';
 
 :root {
-  --base-background: #F6F6F6;
-  --base-color: #F6F6F6;
+  --base-background: #F0F0F0;
+  --base-color: #F0F0F0;
   --base-text-color: #080D1B;
   --base-cont: #080D1B;
-  --main-color: #fbe5e7;
+  --main-color: #8A0317;
   --main-color-cont: #FFF;
   --accent-color: #A69463;
   --accent-cont: #FFF;
@@ -24,10 +26,7 @@ body {
   letter-spacing: 0.2em;
   overflow-x: hidden;
   max-width: 100%;
-  font-family: "Source Han Serif", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Arial", "Meiryo", sans-serif;
-}
-main {
-  padding-bottom: 3rem;
+  font-family: "Noto Sans JP", "Source Han Serif", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Arial", "Meiryo", sans-serif;
 }
 video {
   width: 100%;
@@ -105,9 +104,6 @@ input:not([type="checkbox"]), textarea {
 input:focus, textarea:focus {
   border: 1px solid var(--accent-color);
 }
-label {
-  padding: 0.5rem;
-}
 
 iframe {
   max-width: 100%;
@@ -136,33 +132,7 @@ iframe {
 .d-sp {
   display: none;
 }
-.bg-rect {
-  position: relative;
-}
-.bg-rect > * {
-  position: relative;
-  z-index: 1;
-}
-.bg-rect::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 5rem;
-  right: 0;
-  width: 45%;
-  height: 50%;
-  background: var(--base-background);
-}
-.bg-rect:not(.bg-rect--left).active::before {
-  animation: growRight 600ms cubic-bezier(.29,.7,.52,.99) both;
-}
-.bg-rect--left::before {
-  right: auto;
-  left: 0;
-}
-.bg-rect--left.active::before {
-  animation: growLeft 600ms cubic-bezier(.29,.7,.52,.99) both;
-}
+
 @media screen and (max-width: 768px) {
   html, body {
     font-size: 14px;
@@ -184,40 +154,6 @@ iframe {
   }
   .d-sp {
     display: block;
-  }
-}
-
-/*** animation ***/
-.fadeIn {
-  animation: fadeIn 300ms linear both;
-}
-.fadeInTrans {
-  opacity: 0;
-  transition: 300ms;
-}
-.fadeInTrans.active {
-  opacity: 1;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.fadeOut {
-  animation: fadeOut 300ms linear both;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
@@ -267,4 +203,58 @@ iframe {
   100% {
     width: 100%;
   }
+}
+.geolonia-svg-map {
+  width: 100%;
+  height: 100%;
+}
+
+.geolonia-svg-map .prefecture {
+  /* fill: #f7f7f7; */
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.geolonia-svg-map .kyusyu-okinawa {
+  fill: #ff99cc;
+}
+.geolonia-svg-map .shikoku {
+  fill: #ffcc99;
+}
+.geolonia-svg-map .chugoku {
+  fill: #ffff99;
+}
+.geolonia-svg-map .kinki {
+  fill: #99ffcc;
+}
+.geolonia-svg-map .chubu {
+  fill: #99ff99;
+}
+.geolonia-svg-map .kanto {
+  fill: #ff9999;
+}
+.geolonia-svg-map .tohoku {
+  fill: #99ccff;
+}
+/* .geolonia-svg-map .hokkaido {
+  fill: #9999ff;
+} */
+/* .geolonia-svg-map .kyusyu-okinawa:hover,
+.geolonia-svg-map .shikoku:hover,
+.geolonia-svg-map .chugoku:hover,
+.geolonia-svg-map .kinki:hover,
+.geolonia-svg-map .chubu:hover,
+.geolonia-svg-map .kanto:hover,
+.geolonia-svg-map .tohoku:hover {
+  fill: #ff0000;
+} */
+/* .geolonia-svg-map rect {
+  fill: #000 !important;
+} */
+/* .geolonia-svg-map .prefecture:hover {
+  fill: #ff0000;
+} */
+
+.geolonia-svg-map .boundary-line {
+  stroke: #999999;
 }

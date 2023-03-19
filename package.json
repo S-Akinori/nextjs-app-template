@@ -6,12 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "emulators:start": "firebase emulators:start --import=./lib/firebase/data/"
   },
   "dependencies": {
+    "firebase": "^9.18.0",
+    "firebase-admin": "^11.5.0",
     "next": "^13.1.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.7"
   },
   "devDependencies": {
     "@types/node": "18.0.0",

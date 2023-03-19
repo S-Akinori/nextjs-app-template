@@ -1,0 +1,29 @@
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.absolute-center-x {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.absolute-center-y {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.block-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block-center-x {
+  display: flex;
+  justify-content: center;
+}
+.block-center-y {
+  display: flex;
+  align-items: center;
+}
